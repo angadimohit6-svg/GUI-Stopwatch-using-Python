@@ -1,12 +1,8 @@
-# ***** IMPORTS *****
 import tkinter as tk
 
-# ***** VARIABLES *****
 running = False
 hours, minutes, seconds = 0, 0, 0
 update_time = None   # define before use
-
-# ***** FUNCTIONS *****
 
 def start():
     global running
@@ -52,16 +48,13 @@ def update():
     update_time = stopwatch_label.after(1000, update)
 
 
-# ***** WINDOW *****
 root = tk.Tk()
 root.geometry("485x220")
 root.title("Stopwatch")
 
-# ***** LABEL *****
 stopwatch_label = tk.Label(root, text="00:00:00", font=("Arial", 80))
 stopwatch_label.pack()
 
-# ***** BUTTONS *****
 start_button = tk.Button(root, text="Start", height=5, width=7, font=("Arial", 20), command=start)
 start_button.pack(side=tk.LEFT)
 
@@ -74,5 +67,4 @@ reset_button.pack(side=tk.LEFT)
 quit_button = tk.Button(root, text="Quit", height=5, width=7, font=("Arial", 20), command=root.quit)
 quit_button.pack(side=tk.LEFT)
 
-# ***** RUN *****
 root.mainloop()
